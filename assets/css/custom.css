@@ -1,0 +1,844 @@
+/*--------------------------------------------------------
+    CUSTOM STYLES
+    Doplňkové styly pro web projektu
+    "Ochrana cenných ekosystémů a řízení udržitelné
+    turistiky v okolí Brna" – nahrazují e-shopové prvky
+    šablony Artday. Načítá se po main.css.
+---------------------------------------------------------*/
+
+:root{
+    --wsc-accent: #90A955;
+    --wsc-accent-dark: #4F772D;
+    --wsc-dark: #132A13;
+    --wsc-green: #4F772D;
+    --wsc-green-dark: #31572C;
+    --wsc-muted: #627360;
+    --wsc-bg-soft: #E5EBE0;
+    --wsc-border: #DCE4D6;
+}
+
+/* Web napříč stránkami v písmu Nunito (nahrazuje Lato/Merriweather ze šablony) */
+body,
+.btn, h1, h2, h3, h4, h5, h6, .dropdown-menu li, .ws-work-item-desc span, .ws-footer-bar p, .ws-topbar, .ws-navbar,
+.ws-item-category, .ws-item-sale span, .ws-call-btn a, .ws-footer li, .ws-contact-form, .ws-contact-page .ws-contact-info a,
+.ws-contact-offices .caption strong, .ws-journal-page .nav-tabs li a, .ws-journal-pagination .pager li>a, .ws-shop-page .nav-tabs li a,
+.ws-faq-page .nav-tabs li a, .ws-login-form, .ws-register-form, .ws-breadcrumb, .ws-mycart-content thead th, .ws-mycart-total,
+.ws-mycart-content .ws-coupon-code input, .ws-checkout-billing label, .ws-checkout-order, .ws-3d-title,
+.ws-hero-description h4, span.minicart-content-price, .ws-about-team .caption h5, .ws-forgot-pass a, .ws-register-link a,
+.ws-mycart-content .cart-item-title h3{
+    font-family: 'Nunito', sans-serif;
+}
+.ws-page-container h2, .ws-page-container h3{ color: var(--wsc-green-dark); }
+.ws-footer-separator{ background-color: var(--wsc-accent); }
+.ws-btn-black{ background-color: var(--wsc-dark); }
+.ws-btn-black:hover{ background-color: var(--wsc-accent-dark); }
+.ws-big-btn{ background-color: var(--wsc-accent-dark); }
+.ws-big-btn:hover{ background-color: var(--wsc-green-dark); }
+.ws-parallax-header .ws-parallax-holder h1{ font-weight: 400; }
+.ws-photo-placeholder{ border-radius: 6px; }
+.ws-footer{ background-color: var(--wsc-dark); }
+.ws-footer-bar{ background-color: #0d1f0d; }
+.ws-footer-bar p{ color: var(--wsc-accent); }
+.ws-footer-bar .pull-right p{ text-transform: none; letter-spacing: normal; }
+.ws-footer-bar .pull-right a{ color: var(--wsc-accent); text-decoration: underline; }
+.ws-footer-bar .pull-right a:hover{ color: #fff; }
+
+/*----------------------------------------
+    0) LOGO (textová varianta)
+-----------------------------------------*/
+.ws-logo-text{
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    line-height: 1.1;
+}
+.ws-logo-text .ws-logo-main{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--wsc-dark);
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+/* main.css centruje .ws-logo přes position:absolute (počítalo se s malým
+   obrázkovým logem) - naše dvouřádkové textové logo se tak přes něj
+   překrývalo s menu, proto se v static hlavičce vrací do běžného toku */
+.ws-header-static .ws-logo{
+    position: static;
+    transform: none;
+    margin: 0 0 6px 0;
+    max-width: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.ws-logo-text .ws-logo-sub{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--wsc-accent-dark);
+    white-space: nowrap;
+    padding-left: 10px;
+    border-left: 1px solid var(--wsc-border);
+}
+
+/*----------------------------------------
+    1) OBECNÉ / TYPOGRAFIE
+-----------------------------------------*/
+.ws-eyebrow{
+    display: inline-block;
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--wsc-accent-dark);
+    margin-bottom: 12px;
+}
+.ws-lead{
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+}
+.ws-page-container h2{
+    font-family: 'Nunito', sans-serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+.ws-page-container h3{
+    font-family: 'Nunito', sans-serif;
+}
+.padding-top-x40{ padding-top: 40px; }
+
+/*----------------------------------------
+    2) BADGES (pilíře programu)
+-----------------------------------------*/
+.ws-badge{
+    display: inline-block;
+    padding: 5px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    color: #fff;
+    margin: 0 8px 8px 0;
+}
+.ws-badge-tourism{ background-color: var(--wsc-accent); }
+.ws-badge-biodiversity{ background-color: var(--wsc-green); }
+.ws-badge-outline{
+    background-color: transparent;
+    border: 1px solid var(--wsc-border);
+    color: var(--wsc-muted);
+}
+
+/*----------------------------------------
+    3) PLACEHOLDER FOTOGRAFIÍ
+    (dočasně místo reálných snímků lokalit)
+-----------------------------------------*/
+.ws-photo-placeholder{
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    background: repeating-linear-gradient(135deg, #eef1ea, #eef1ea 12px, #e4e8de 12px, #e4e8de 24px);
+    border: 1px solid var(--wsc-border);
+}
+.ws-photo-placeholder:before{
+    content:"";
+    display: block;
+    padding-top: 66.6%; /* 3:2 */
+}
+.ws-photo-placeholder.ratio-16-9:before{ padding-top: 56.25%; }
+.ws-photo-placeholder.ratio-1-1:before{ padding-top: 100%; }
+.ws-photo-placeholder.ratio-4-5:before{ padding-top: 125%; }
+.ws-photo-placeholder.ws-hero-photo{
+    height: 380px;
+}
+.ws-photo-placeholder.ws-hero-photo:before{ content: none; }
+.ws-photo-placeholder .ws-placeholder-inner{
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+.ws-photo-placeholder .ws-placeholder-inner i{
+    font-size: 26px;
+    color: #a9b39d;
+    margin-bottom: 10px;
+}
+.ws-photo-placeholder .ws-placeholder-inner span{
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    color: #8a927f;
+    line-height: 1.5;
+}
+
+/*----------------------------------------
+    4) HERO ÚVODNÍ STRÁNKY
+-----------------------------------------*/
+.ws-hero-home{
+    position: relative;
+    min-height: 640px;
+    display: flex;
+    align-items: center;
+    background-color: #2f4a34;
+    overflow: hidden;
+}
+.ws-hero-home .ws-hero-photo-bg{
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('../img/gallery/arboretum-krtiny/01-rybnik-siroky.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+.ws-hero-home .ws-hero-overlay{
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, #2f4a34 0%, #3f5f45 45%, #56755a 100%);
+    opacity: 0.5;
+    z-index: 1;
+}
+.ws-call-section{
+    background-image: url('../img/gallery/udrzitelny-turismus/06-lesni-stezka-znaceni.jpg');
+}
+.ws-pictogram-row{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+.ws-pictogram{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+.ws-pictogram i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: var(--wsc-green);
+    color: #fff;
+    font-size: 24px;
+}
+.ws-pictogram span{
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--wsc-muted);
+}
+.ws-hero-home .ws-hero-pattern{
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: repeating-linear-gradient(120deg, rgba(255,255,255,0.035) 0, rgba(255,255,255,0.035) 2px, transparent 2px, transparent 40px);
+}
+.ws-hero-home .container{
+    position: relative;
+    z-index: 2;
+}
+.ws-hero-home .ws-hero-content{
+    max-width: 720px;
+    padding: 90px 0;
+}
+.ws-hero-home .ws-hero-content .ws-eyebrow{ color: #d9c9a3; }
+.ws-hero-home h1{
+    font-family: 'Nunito', sans-serif;
+    font-size: 42px;
+    line-height: 1.3;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.ws-hero-home p{
+    font-size: 17px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 30px;
+}
+.ws-hero-cta a{
+    margin: 0 12px 12px 0;
+}
+.ws-hero-meta{
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    display: flex;
+    flex-wrap: wrap;
+}
+.ws-hero-meta .ws-hero-meta-item{
+    margin-right: 45px;
+    margin-bottom: 10px;
+}
+.ws-hero-meta .ws-hero-meta-item strong{
+    display: block;
+    font-family: 'Nunito', sans-serif;
+    font-size: 22px;
+    color: #fff;
+}
+.ws-hero-meta .ws-hero-meta-item span{
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.65);
+}
+
+/*----------------------------------------
+    5) STATISTIKY / KLÍČOVÁ ČÍSLA
+-----------------------------------------*/
+.ws-stats-section{
+    background-color: var(--wsc-dark);
+    padding: 60px 0;
+}
+.ws-stats-section .ws-stat-item{
+    text-align: center;
+    padding: 15px 10px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+.ws-stats-section .col-sm-3:last-child .ws-stat-item{ border-right: none; }
+.ws-stats-section .ws-stat-number{
+    display: block;
+    font-family: 'Nunito', sans-serif;
+    font-size: 34px;
+    color: var(--wsc-accent);
+    margin-bottom: 6px;
+}
+.ws-stats-section .ws-stat-label{
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+}
+
+/*----------------------------------------
+    6) KARTY REALIZOVANÝCH OBLASTÍ
+-----------------------------------------*/
+.ws-area-card{
+    margin-bottom: 40px;
+    background-color: #fff;
+    border: 1px solid var(--wsc-border);
+    transition: box-shadow .25s ease, transform .25s ease;
+}
+.ws-area-card:hover{
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transform: translateY(-3px);
+}
+.ws-area-card .ws-area-card-body{
+    padding: 26px 28px 28px 28px;
+}
+.ws-area-card h3{
+    margin: 0 0 10px 0;
+    font-size: 20px;
+}
+.ws-area-card p{
+    color: #666;
+    margin-bottom: 18px;
+}
+.ws-area-card .ws-area-facts{
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    font-size: 13px;
+    color: var(--wsc-muted);
+}
+.ws-area-card .ws-area-facts li{
+    padding: 4px 0;
+    border-top: 1px dashed var(--wsc-border);
+}
+.ws-area-card .ws-area-facts li:first-child{ border-top: none; }
+.ws-area-card .ws-area-facts i{
+    width: 18px;
+    color: var(--wsc-accent-dark);
+}
+.ws-area-card .ws-area-link{
+    display: inline-block;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    color: var(--wsc-dark);
+    border-bottom: 2px solid var(--wsc-accent);
+    padding-bottom: 3px;
+}
+.ws-area-card .ws-area-link:hover{ color: var(--wsc-accent-dark); }
+
+/*----------------------------------------
+    7) CÍLE / TIMELINE
+-----------------------------------------*/
+.ws-goal-card{
+    background-color: var(--wsc-bg-soft);
+    padding: 34px 30px;
+    margin-bottom: 30px;
+    height: 100%;
+    border-top: 3px solid var(--wsc-accent);
+}
+.ws-goal-card .ws-goal-number{
+    font-family: 'Nunito', sans-serif;
+    font-size: 36px;
+    color: var(--wsc-accent);
+    line-height: 1;
+    margin-bottom: 14px;
+}
+.ws-goal-card h3{ font-size: 18px; margin-bottom: 12px; }
+.ws-goal-card p{ color: #666; font-size: 14px; margin: 0; }
+
+.ws-timeline{
+    position: relative;
+    margin: 40px 0;
+    padding-left: 30px;
+    border-left: 2px solid var(--wsc-border);
+}
+.ws-timeline-item{
+    position: relative;
+    padding-bottom: 34px;
+}
+.ws-timeline-item:last-child{ padding-bottom: 0; }
+.ws-timeline-item:before{
+    content: "";
+    position: absolute;
+    left: -37px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--wsc-accent);
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px var(--wsc-accent);
+}
+.ws-timeline-item .ws-timeline-date{
+    display: block;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--wsc-accent-dark);
+    margin-bottom: 4px;
+}
+.ws-timeline-item h4{
+    margin: 0 0 6px 0;
+    font-size: 16px;
+    font-family: 'Nunito', sans-serif;
+}
+.ws-timeline-item p{
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+.ws-timeline-box{
+    background-color: #fff;
+    border: 1px solid var(--wsc-border);
+    border-radius: 14px;
+    padding: 34px 38px 24px;
+    box-shadow: 0 4px 18px rgba(19, 42, 19, 0.08);
+}
+.ws-timeline-box .ws-timeline{ margin: 0; }
+.ws-timeline-box .ws-timeline-item{ padding-bottom: 20px; }
+.ws-timeline-box .ws-timeline-item h4{ font-size: 15px; }
+.ws-timeline-box .ws-timeline-item p{ font-size: 13px; line-height: 1.5; }
+
+/*----------------------------------------
+    8) INDIKÁTORY / FAKTA (obdélníkové boxy)
+-----------------------------------------*/
+.ws-fact-box{
+    background-color: #fff;
+    border: 1px solid var(--wsc-border);
+    border-radius: 10px;
+    padding: 28px 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 18px rgba(19, 42, 19, 0.08);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.ws-fact-box:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 26px rgba(19, 42, 19, 0.13);
+}
+.ws-fact-box h4{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 16px 0;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--wsc-border);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--wsc-green-dark);
+}
+.ws-fact-box h4:before{
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--wsc-accent);
+    flex: 0 0 auto;
+}
+.ws-fact-box ul{
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    color: #555;
+}
+.ws-fact-box ul li{
+    position: relative;
+    padding: 6px 0 6px 26px;
+}
+.ws-fact-box ul li:before{
+    content: "\f00c";
+    font-family: FontAwesome;
+    position: absolute;
+    left: 0;
+    top: 6px;
+    font-size: 12px;
+    color: var(--wsc-accent-dark);
+}
+.ws-reassurance{
+    background-color: var(--wsc-bg-soft);
+    border-radius: 14px;
+    padding: 32px 36px 32px 96px;
+    position: relative;
+    box-shadow: 0 6px 24px rgba(19, 42, 19, 0.10);
+}
+.ws-reassurance:before{
+    content: "\f06c";
+    font-family: FontAwesome;
+    position: absolute;
+    left: 30px;
+    top: 32px;
+    width: 46px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: var(--wsc-accent-dark);
+    color: #fff;
+    font-size: 19px;
+}
+.ws-reassurance p{
+    margin: 0;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.7;
+}
+@media (max-width: 600px){
+    .ws-reassurance{ padding: 80px 24px 28px; }
+    .ws-reassurance:before{ left: 24px; top: -23px; }
+}
+
+/* FAQ - barevný box + náznak rozklikávání */
+.ws-faq-box{
+    background-color: var(--wsc-bg-soft);
+    border-radius: 14px;
+    padding: 10px 34px;
+    box-shadow: 0 4px 18px rgba(19, 42, 19, 0.08);
+}
+.ws-faq-box .accordion-group{
+    border-top-color: rgba(19, 42, 19, 0.1);
+}
+.ws-faq-box .accordion-heading a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-weight: 700;
+    color: var(--wsc-dark);
+}
+.ws-faq-box .accordion-heading a:after{
+    content: "\f067";
+    font-family: FontAwesome;
+    flex: 0 0 auto;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: var(--wsc-accent-dark);
+    color: #fff;
+    font-size: 13px;
+    transition: transform .2s ease;
+}
+.ws-faq-box .accordion-heading a.active:after{
+    content: "\f068";
+}
+
+/* Řádek se stejně vysokými sloupci (fotka + text) */
+.ws-row-equal{ display: flex; flex-wrap: wrap; }
+.ws-row-equal .ws-photo-placeholder{ height: 100%; }
+.ws-row-equal .ws-photo-placeholder:before{ content: none; }
+@media (max-width: 767px){
+    .ws-row-equal .ws-photo-placeholder{ height: auto; }
+    .ws-row-equal .ws-photo-placeholder:before{ content: ""; padding-top: 56.25%; }
+}
+
+/*----------------------------------------
+    9) PARTNEŘI
+-----------------------------------------*/
+.ws-partner-card{
+    display: flex;
+    gap: 26px;
+    padding: 30px 0;
+    border-top: 1px solid var(--wsc-border);
+}
+.ws-partner-card:first-of-type{ border-top: none; }
+.ws-partner-logo{
+    flex: 0 0 140px;
+    width: 140px;
+    height: 100px;
+    background-color: var(--wsc-bg-soft);
+    border: 1px solid var(--wsc-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 11px;
+    color: #999;
+    padding: 10px;
+    line-height: 1.3;
+}
+.ws-partner-logo.has-logo{
+    background-color: #fff;
+    transition: opacity .2s ease;
+}
+.ws-partner-logo.has-logo:hover{
+    opacity: 0.75;
+}
+.ws-partner-logo.has-logo img{
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+.ws-partner-body h3{
+    margin: 0 0 4px 0;
+    font-size: 19px;
+}
+.ws-partner-role{
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--wsc-accent-dark);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.ws-partner-body p{
+    color: #666;
+    margin: 0;
+}
+.ws-supporter-strip{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 10px;
+}
+.ws-supporter-strip .ws-supporter-item{
+    flex: 1 1 210px;
+    background-color: var(--wsc-bg-soft);
+    border: 1px solid var(--wsc-border);
+    padding: 20px;
+    font-size: 13px;
+    color: #666;
+}
+.ws-supporter-strip .ws-supporter-item strong{
+    display: block;
+    color: var(--wsc-dark);
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+/*----------------------------------------
+    10) KE STAŽENÍ
+-----------------------------------------*/
+.ws-download-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    background-color: #fff;
+    border: 1px solid var(--wsc-border);
+    margin-bottom: 14px;
+}
+.ws-download-item .ws-download-icon{
+    font-size: 20px;
+    color: var(--wsc-accent-dark);
+    margin-right: 18px;
+}
+.ws-download-item .ws-download-title{
+    font-weight: 700;
+    color: var(--wsc-dark);
+    display: block;
+}
+.ws-download-item .ws-download-meta{
+    font-size: 12px;
+    color: var(--wsc-muted);
+}
+.ws-download-item .ws-download-status{
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    background-color: var(--wsc-bg-soft);
+    color: var(--wsc-muted);
+    border-radius: 2px;
+    white-space: nowrap;
+}
+.ws-download-flex{
+    display: flex;
+    align-items: center;
+}
+
+/*----------------------------------------
+    11) AKTUALITY – draft badge
+-----------------------------------------*/
+.ws-draft-badge{
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 3;
+    background-color: rgba(53,53,53,0.85);
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+}
+.ws-journal-image{ position: relative; }
+
+/*----------------------------------------
+    12) DISCLAIMER / FUNDING BAR
+-----------------------------------------*/
+.ws-funding-bar{
+    background-color: #fff;
+    border-top: 1px solid var(--wsc-border);
+    padding: 26px 0;
+}
+.ws-funding-bar .ws-funding-text{
+    font-size: 12px;
+    color: #7a7568;
+    line-height: 1.6;
+    margin: 0;
+}
+.ws-funding-bar .ws-funding-logos{
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+.ws-funding-bar .ws-funding-logo{
+    width: 130px;
+    height: 46px;
+    background-color: #fff;
+    border: 1px dashed #c9c3b4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #a49d8a;
+    text-align: center;
+    padding: 4px;
+    line-height: 1.3;
+}
+.ws-funding-bar .ws-funding-logo.has-logo{
+    width: auto;
+    max-width: 190px;
+    border: none;
+    padding: 0;
+}
+.ws-funding-bar .ws-funding-logo.has-logo img{
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+/*----------------------------------------
+    14) FOTOGALERIE / LIGHTBOX
+-----------------------------------------*/
+.ws-photo-carousel .item{
+    padding: 0 10px;
+}
+.ws-gallery-item{
+    display: block;
+    cursor: pointer;
+}
+.ws-gallery-item .ws-photo-placeholder{ transition: opacity .2s ease; }
+.ws-gallery-item:hover .ws-photo-placeholder{ opacity: 0.85; }
+.ws-photo-placeholder.has-image img{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ws-gallery-item .ws-gallery-caption{
+    display: block;
+    margin-top: 8px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    color: #6f7666;
+}
+.ws-lightbox{
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(20, 22, 17, 0.92);
+    padding: 40px 70px;
+}
+.ws-lightbox.is-open{ display: flex; align-items: center; justify-content: center; }
+.ws-lightbox-figure{
+    max-width: 900px;
+    width: 100%;
+}
+.ws-lightbox-figure .ws-photo-placeholder{ border-color: rgba(255,255,255,0.2); }
+.ws-lightbox-img{
+    display: none;
+    max-width: 100%;
+    max-height: 80vh;
+    margin: 0 auto;
+}
+.ws-lightbox-caption{
+    margin-top: 14px;
+    text-align: center;
+    color: #e7e5dc;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+}
+.ws-lightbox-close,
+.ws-lightbox-prev,
+.ws-lightbox-next{
+    position: absolute;
+    background: none;
+    border: 0;
+    color: #e7e5dc;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 10px;
+}
+.ws-lightbox-close{ top: 16px; right: 20px; font-size: 28px; }
+.ws-lightbox-prev{ left: 16px; top: 50%; transform: translateY(-50%); }
+.ws-lightbox-next{ right: 16px; top: 50%; transform: translateY(-50%); }
+.ws-lightbox-close:hover,
+.ws-lightbox-prev:hover,
+.ws-lightbox-next:hover{ color: #fff; }
+
+/*----------------------------------------
+    13) DROBNÉ ÚPRAVY / RESPONSIVE
+-----------------------------------------*/
+@media (max-width: 767px){
+    .ws-hero-home h1{ font-size: 30px; }
+    .ws-hero-home .ws-hero-content{ padding: 60px 0; }
+    .ws-partner-card{ flex-direction: column; }
+    .ws-partner-logo{ width: 120px; }
+    .ws-funding-bar .row > div{ margin-bottom: 16px; }
+    .ws-stats-section .ws-stat-item{ border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; margin-bottom: 10px; }
+    .ws-lightbox{ padding: 60px 20px; }
+}

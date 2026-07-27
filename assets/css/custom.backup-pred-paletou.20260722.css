@@ -1,0 +1,621 @@
+/*--------------------------------------------------------
+    CUSTOM STYLES
+    Doplňkové styly pro web projektu
+    "Ochrana cenných ekosystémů a řízení udržitelné
+    turistiky v okolí Brna" – nahrazují e-shopové prvky
+    šablony Artday. Načítá se po main.css.
+---------------------------------------------------------*/
+
+:root{
+    --wsc-accent: #C2A476;
+    --wsc-accent-dark: #a8875a;
+    --wsc-dark: #353535;
+    --wsc-green: #4b7f52;
+    --wsc-green-dark: #3a6440;
+    --wsc-muted: #767676;
+    --wsc-bg-soft: #f5f3ef;
+    --wsc-border: #e2ded5;
+}
+
+/*----------------------------------------
+    0) LOGO (textová varianta)
+-----------------------------------------*/
+.ws-logo-text{
+    display: inline-block;
+    text-align: center;
+    line-height: 1.1;
+}
+.ws-logo-text .ws-logo-main{
+    display: block;
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--wsc-dark);
+    letter-spacing: 0.5px;
+}
+.ws-logo-text .ws-logo-sub{
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--wsc-accent-dark);
+    margin-top: 2px;
+}
+
+/*----------------------------------------
+    1) OBECNÉ / TYPOGRAFIE
+-----------------------------------------*/
+.ws-eyebrow{
+    display: inline-block;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--wsc-accent-dark);
+    margin-bottom: 12px;
+}
+.ws-lead{
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+}
+.ws-page-container h2{
+    font-family: 'Merriweather', serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+.ws-page-container h3{
+    font-family: 'Merriweather', serif;
+}
+.padding-top-x40{ padding-top: 40px; }
+
+/*----------------------------------------
+    2) BADGES (pilíře programu)
+-----------------------------------------*/
+.ws-badge{
+    display: inline-block;
+    padding: 5px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    color: #fff;
+    margin: 0 8px 8px 0;
+}
+.ws-badge-tourism{ background-color: var(--wsc-accent); }
+.ws-badge-biodiversity{ background-color: var(--wsc-green); }
+.ws-badge-outline{
+    background-color: transparent;
+    border: 1px solid var(--wsc-border);
+    color: var(--wsc-muted);
+}
+
+/*----------------------------------------
+    3) PLACEHOLDER FOTOGRAFIÍ
+    (dočasně místo reálných snímků lokalit)
+-----------------------------------------*/
+.ws-photo-placeholder{
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    background: repeating-linear-gradient(135deg, #eef1ea, #eef1ea 12px, #e4e8de 12px, #e4e8de 24px);
+    border: 1px solid var(--wsc-border);
+}
+.ws-photo-placeholder:before{
+    content:"";
+    display: block;
+    padding-top: 66.6%; /* 3:2 */
+}
+.ws-photo-placeholder.ratio-16-9:before{ padding-top: 56.25%; }
+.ws-photo-placeholder.ratio-1-1:before{ padding-top: 100%; }
+.ws-photo-placeholder.ratio-4-5:before{ padding-top: 125%; }
+.ws-photo-placeholder.ws-hero-photo{
+    height: 380px;
+}
+.ws-photo-placeholder.ws-hero-photo:before{ content: none; }
+.ws-photo-placeholder .ws-placeholder-inner{
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+.ws-photo-placeholder .ws-placeholder-inner i{
+    font-size: 26px;
+    color: #a9b39d;
+    margin-bottom: 10px;
+}
+.ws-photo-placeholder .ws-placeholder-inner span{
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    color: #8a927f;
+    line-height: 1.5;
+}
+
+/*----------------------------------------
+    4) HERO ÚVODNÍ STRÁNKY
+-----------------------------------------*/
+.ws-hero-home{
+    position: relative;
+    min-height: 640px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #2f4a34 0%, #3f5f45 45%, #56755a 100%);
+    overflow: hidden;
+}
+.ws-hero-home .ws-hero-pattern{
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: repeating-linear-gradient(120deg, rgba(255,255,255,0.035) 0, rgba(255,255,255,0.035) 2px, transparent 2px, transparent 40px);
+}
+.ws-hero-home .container{
+    position: relative;
+    z-index: 2;
+}
+.ws-hero-home .ws-hero-content{
+    max-width: 720px;
+    padding: 90px 0;
+}
+.ws-hero-home .ws-hero-content .ws-eyebrow{ color: #d9c9a3; }
+.ws-hero-home h1{
+    font-family: 'Merriweather', serif;
+    font-size: 42px;
+    line-height: 1.3;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.ws-hero-home p{
+    font-size: 17px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 30px;
+}
+.ws-hero-cta a{
+    margin: 0 12px 12px 0;
+}
+.ws-hero-meta{
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    display: flex;
+    flex-wrap: wrap;
+}
+.ws-hero-meta .ws-hero-meta-item{
+    margin-right: 45px;
+    margin-bottom: 10px;
+}
+.ws-hero-meta .ws-hero-meta-item strong{
+    display: block;
+    font-family: 'Merriweather', serif;
+    font-size: 22px;
+    color: #fff;
+}
+.ws-hero-meta .ws-hero-meta-item span{
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.65);
+}
+
+/*----------------------------------------
+    5) STATISTIKY / KLÍČOVÁ ČÍSLA
+-----------------------------------------*/
+.ws-stats-section{
+    background-color: var(--wsc-dark);
+    padding: 60px 0;
+}
+.ws-stats-section .ws-stat-item{
+    text-align: center;
+    padding: 15px 10px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+.ws-stats-section .col-sm-3:last-child .ws-stat-item{ border-right: none; }
+.ws-stats-section .ws-stat-number{
+    display: block;
+    font-family: 'Merriweather', serif;
+    font-size: 34px;
+    color: var(--wsc-accent);
+    margin-bottom: 6px;
+}
+.ws-stats-section .ws-stat-label{
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+}
+
+/*----------------------------------------
+    6) KARTY REALIZOVANÝCH OBLASTÍ
+-----------------------------------------*/
+.ws-area-card{
+    margin-bottom: 40px;
+    background-color: #fff;
+    border: 1px solid var(--wsc-border);
+    transition: box-shadow .25s ease, transform .25s ease;
+}
+.ws-area-card:hover{
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transform: translateY(-3px);
+}
+.ws-area-card .ws-area-card-body{
+    padding: 26px 28px 28px 28px;
+}
+.ws-area-card h3{
+    margin: 0 0 10px 0;
+    font-size: 20px;
+}
+.ws-area-card p{
+    color: #666;
+    margin-bottom: 18px;
+}
+.ws-area-card .ws-area-facts{
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    font-size: 13px;
+    color: var(--wsc-muted);
+}
+.ws-area-card .ws-area-facts li{
+    padding: 4px 0;
+    border-top: 1px dashed var(--wsc-border);
+}
+.ws-area-card .ws-area-facts li:first-child{ border-top: none; }
+.ws-area-card .ws-area-facts i{
+    width: 18px;
+    color: var(--wsc-accent-dark);
+}
+.ws-area-card .ws-area-link{
+    display: inline-block;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    color: var(--wsc-dark);
+    border-bottom: 2px solid var(--wsc-accent);
+    padding-bottom: 3px;
+}
+.ws-area-card .ws-area-link:hover{ color: var(--wsc-accent-dark); }
+
+/*----------------------------------------
+    7) CÍLE / TIMELINE
+-----------------------------------------*/
+.ws-goal-card{
+    background-color: var(--wsc-bg-soft);
+    padding: 34px 30px;
+    margin-bottom: 30px;
+    height: 100%;
+    border-top: 3px solid var(--wsc-accent);
+}
+.ws-goal-card .ws-goal-number{
+    font-family: 'Merriweather', serif;
+    font-size: 36px;
+    color: var(--wsc-accent);
+    line-height: 1;
+    margin-bottom: 14px;
+}
+.ws-goal-card h3{ font-size: 18px; margin-bottom: 12px; }
+.ws-goal-card p{ color: #666; font-size: 14px; margin: 0; }
+
+.ws-timeline{
+    position: relative;
+    margin: 40px 0;
+    padding-left: 30px;
+    border-left: 2px solid var(--wsc-border);
+}
+.ws-timeline-item{
+    position: relative;
+    padding-bottom: 34px;
+}
+.ws-timeline-item:last-child{ padding-bottom: 0; }
+.ws-timeline-item:before{
+    content: "";
+    position: absolute;
+    left: -37px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--wsc-accent);
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px var(--wsc-accent);
+}
+.ws-timeline-item .ws-timeline-date{
+    display: block;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--wsc-accent-dark);
+    margin-bottom: 4px;
+}
+.ws-timeline-item h4{
+    margin: 0 0 6px 0;
+    font-size: 16px;
+    font-family: 'Merriweather', serif;
+}
+.ws-timeline-item p{
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+/*----------------------------------------
+    8) INDIKÁTORY / FAKTA (obdélníkové boxy)
+-----------------------------------------*/
+.ws-fact-box{
+    background-color: var(--wsc-bg-soft);
+    border-left: 3px solid var(--wsc-accent);
+    padding: 22px 26px;
+    margin-bottom: 20px;
+}
+.ws-fact-box h4{
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--wsc-dark);
+}
+.ws-fact-box ul{
+    margin: 0;
+    padding-left: 18px;
+    color: #555;
+}
+.ws-fact-box ul li{ padding: 3px 0; }
+.ws-reassurance{
+    background-color: var(--wsc-bg-soft);
+    border-left: 3px solid var(--wsc-green);
+    padding: 24px 28px;
+}
+.ws-reassurance p{
+    margin: 0;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/*----------------------------------------
+    9) PARTNEŘI
+-----------------------------------------*/
+.ws-partner-card{
+    display: flex;
+    gap: 26px;
+    padding: 30px 0;
+    border-top: 1px solid var(--wsc-border);
+}
+.ws-partner-card:first-of-type{ border-top: none; }
+.ws-partner-logo{
+    flex: 0 0 140px;
+    width: 140px;
+    height: 100px;
+    background-color: var(--wsc-bg-soft);
+    border: 1px solid var(--wsc-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 11px;
+    color: #999;
+    padding: 10px;
+    line-height: 1.3;
+}
+.ws-partner-body h3{
+    margin: 0 0 4px 0;
+    font-size: 19px;
+}
+.ws-partner-role{
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--wsc-accent-dark);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.ws-partner-body p{
+    color: #666;
+    margin: 0;
+}
+.ws-supporter-strip{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 10px;
+}
+.ws-supporter-strip .ws-supporter-item{
+    flex: 1 1 210px;
+    background-color: var(--wsc-bg-soft);
+    border: 1px solid var(--wsc-border);
+    padding: 20px;
+    font-size: 13px;
+    color: #666;
+}
+.ws-supporter-strip .ws-supporter-item strong{
+    display: block;
+    color: var(--wsc-dark);
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+/*----------------------------------------
+    10) KE STAŽENÍ
+-----------------------------------------*/
+.ws-download-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    background-color: #fff;
+    border: 1px solid var(--wsc-border);
+    margin-bottom: 14px;
+}
+.ws-download-item .ws-download-icon{
+    font-size: 20px;
+    color: var(--wsc-accent-dark);
+    margin-right: 18px;
+}
+.ws-download-item .ws-download-title{
+    font-weight: 700;
+    color: var(--wsc-dark);
+    display: block;
+}
+.ws-download-item .ws-download-meta{
+    font-size: 12px;
+    color: var(--wsc-muted);
+}
+.ws-download-item .ws-download-status{
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    background-color: var(--wsc-bg-soft);
+    color: var(--wsc-muted);
+    border-radius: 2px;
+    white-space: nowrap;
+}
+.ws-download-flex{
+    display: flex;
+    align-items: center;
+}
+
+/*----------------------------------------
+    11) AKTUALITY – draft badge
+-----------------------------------------*/
+.ws-draft-badge{
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 3;
+    background-color: rgba(53,53,53,0.85);
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+}
+.ws-journal-image{ position: relative; }
+
+/*----------------------------------------
+    12) DISCLAIMER / FUNDING BAR
+-----------------------------------------*/
+.ws-funding-bar{
+    background-color: #efece5;
+    border-top: 1px solid var(--wsc-border);
+    padding: 26px 0;
+}
+.ws-funding-bar .ws-funding-text{
+    font-size: 12px;
+    color: #7a7568;
+    line-height: 1.6;
+    margin: 0;
+}
+.ws-funding-bar .ws-funding-logos{
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+.ws-funding-bar .ws-funding-logo{
+    width: 130px;
+    height: 46px;
+    background-color: #fff;
+    border: 1px dashed #c9c3b4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #a49d8a;
+    text-align: center;
+    padding: 4px;
+    line-height: 1.3;
+}
+
+/*----------------------------------------
+    14) FOTOGALERIE / LIGHTBOX
+-----------------------------------------*/
+.ws-photo-carousel .item{
+    padding: 0 10px;
+}
+.ws-gallery-item{
+    display: block;
+    cursor: pointer;
+}
+.ws-gallery-item .ws-photo-placeholder{ transition: opacity .2s ease; }
+.ws-gallery-item:hover .ws-photo-placeholder{ opacity: 0.85; }
+.ws-photo-placeholder.has-image img{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ws-gallery-item .ws-gallery-caption{
+    display: block;
+    margin-top: 8px;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    color: #6f7666;
+}
+.ws-lightbox{
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(20, 22, 17, 0.92);
+    padding: 40px 70px;
+}
+.ws-lightbox.is-open{ display: flex; align-items: center; justify-content: center; }
+.ws-lightbox-figure{
+    max-width: 900px;
+    width: 100%;
+}
+.ws-lightbox-figure .ws-photo-placeholder{ border-color: rgba(255,255,255,0.2); }
+.ws-lightbox-img{
+    display: none;
+    max-width: 100%;
+    max-height: 80vh;
+    margin: 0 auto;
+}
+.ws-lightbox-caption{
+    margin-top: 14px;
+    text-align: center;
+    color: #e7e5dc;
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+}
+.ws-lightbox-close,
+.ws-lightbox-prev,
+.ws-lightbox-next{
+    position: absolute;
+    background: none;
+    border: 0;
+    color: #e7e5dc;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 10px;
+}
+.ws-lightbox-close{ top: 16px; right: 20px; font-size: 28px; }
+.ws-lightbox-prev{ left: 16px; top: 50%; transform: translateY(-50%); }
+.ws-lightbox-next{ right: 16px; top: 50%; transform: translateY(-50%); }
+.ws-lightbox-close:hover,
+.ws-lightbox-prev:hover,
+.ws-lightbox-next:hover{ color: #fff; }
+
+/*----------------------------------------
+    13) DROBNÉ ÚPRAVY / RESPONSIVE
+-----------------------------------------*/
+@media (max-width: 767px){
+    .ws-hero-home h1{ font-size: 30px; }
+    .ws-hero-home .ws-hero-content{ padding: 60px 0; }
+    .ws-partner-card{ flex-direction: column; }
+    .ws-partner-logo{ width: 120px; }
+    .ws-funding-bar .row > div{ margin-bottom: 16px; }
+    .ws-stats-section .ws-stat-item{ border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; margin-bottom: 10px; }
+    .ws-lightbox{ padding: 60px 20px; }
+}
