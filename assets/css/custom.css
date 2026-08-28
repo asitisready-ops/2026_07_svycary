@@ -35,6 +35,22 @@ body,
 .ws-big-btn{ background-color: var(--wsc-accent-dark); }
 .ws-big-btn:hover{ background-color: var(--wsc-green-dark); }
 .ws-parallax-header .ws-parallax-holder h1{ font-weight: 400; }
+.ws-parallax-header .ws-parallax-holder h1.ws-h1-long{
+    font-size: 26px;
+    line-height: 1.4;
+    max-width: 900px;
+    margin: 0 auto;
+    white-space: normal;
+    overflow-wrap: break-word;
+    padding: 0 20px;
+}
+.ws-parallax-header .ws-parallax-holder h1.ws-h1-long:before,
+.ws-parallax-header .ws-parallax-holder h1.ws-h1-long:after{
+    display: none;
+}
+@media only screen and (max-width: 768px) {
+    .ws-parallax-header .ws-parallax-holder h1.ws-h1-long{ font-size: 20px; }
+}
 .ws-photo-placeholder{ border-radius: 6px; }
 .ws-footer{ background-color: var(--wsc-dark); }
 .ws-footer-bar{ background-color: #0d1f0d; }
