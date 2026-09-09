@@ -562,6 +562,13 @@ body,
     padding: 28px 32px;
     box-shadow: 0 6px 24px rgba(19, 42, 19, 0.10);
 }
+.ws-cta-box-img{
+    flex: 0 0 auto;
+    width: 84px;
+    height: 84px;
+    border-radius: 10px;
+    object-fit: cover;
+}
 .ws-cta-box-text{
     flex: 1 1 320px;
     min-width: 0;
