@@ -550,6 +550,36 @@ body,
     .ws-reassurance:before{ left: 24px; top: -23px; }
 }
 
+/* Interní prolink - CTA box "Chcete vědět víc?" */
+.ws-cta-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: var(--wsc-bg-soft);
+    border-radius: 14px;
+    padding: 28px 32px;
+    box-shadow: 0 6px 24px rgba(19, 42, 19, 0.10);
+}
+.ws-cta-box-text{
+    flex: 1 1 320px;
+    min-width: 0;
+}
+.ws-cta-box-text h4{
+    margin: 0 0 6px 0;
+    color: var(--wsc-green-dark);
+}
+.ws-cta-box-text p{
+    margin: 0;
+    color: #555;
+}
+.ws-cta-box .btn{ flex: 0 0 auto; width: auto; white-space: nowrap; }
+@media (max-width: 600px){
+    .ws-cta-box{ flex-direction: column; align-items: flex-start; }
+    .ws-cta-box .btn{ width: 100%; text-align: center; }
+}
+
 /* FAQ - barevný box + náznak rozklikávání */
 .ws-faq-box{
     background-color: var(--wsc-bg-soft);
