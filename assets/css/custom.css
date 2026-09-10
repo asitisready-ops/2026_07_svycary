@@ -744,6 +744,13 @@ body,
     border-radius: 2px;
     white-space: nowrap;
 }
+.ws-download-item .btn{
+    /* jako flex položka je "a.btn" prohlášeno za blokový prvek a width:auto
+       se pak chová jako "vyplň dostupný prostor" - proto tlačítko bez
+       tohoto pravidla roztahovalo přes celý řádek */
+    flex: 0 0 auto;
+    width: fit-content;
+}
 .ws-download-flex{
     display: flex;
     align-items: center;
