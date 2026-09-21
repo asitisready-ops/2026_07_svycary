@@ -103,18 +103,18 @@ body,
 /* Povinná publicita – logo Programu Švýcarsko-české spolupráce v hlavním menu */
 .ws-header-required-logo{
     position: absolute;
-    top: 18px;
+    top: 50%;
     left: 15px;
+    transform: translateY(-50%);
     z-index: 20;
 }
 .ws-header-required-logo img{
     display: block;
-    height: 32px;
+    height: 48px;
     width: auto;
 }
 @media only screen and (max-width: 992px) {
-    .ws-header-required-logo{ top: 14px; }
-    .ws-header-required-logo img{ height: 26px; }
+    .ws-header-required-logo img{ height: 38px; }
 }
 @media only screen and (max-width: 768px) {
     .ws-header-required-logo{
@@ -123,7 +123,7 @@ body,
         justify-content: center;
         margin-bottom: 8px;
     }
-    .ws-header-required-logo img{ height: 24px; }
+    .ws-header-required-logo img{ height: 32px; }
 }
 
 /*----------------------------------------
