@@ -58,6 +58,15 @@ se automaticky nasadí (obvykle do pár minut).
 - `oblast-zajeci-potok.html` – rozšířena odpověď na FAQ otázku "Co bude s
   rybami v rybnících?" o podrobnosti k zarybnění a výzvu návštěvníkům,
   aby ryby do nádrží nevysazovali.
+- Do hlavičky (17 aktivních stránek) přidáno logo povinné publicity
+  "Program Švýcarsko-české spolupráce" vlevo nahoře nad hlavním menu
+  (`.ws-header-required-logo` v `assets/css/custom.css`, obrázek
+  `assets/img/logos/program-svycarsko-ceske-spoluprace.png`, stejný
+  soubor jako v patičkovém funding disclaimeru). Na desktopu je logo
+  absolutně pozicované v levém rohu hlavičky, pod 768px se přesune nad
+  logo webu a je vycentrované, aby se nepřekrývalo s textem "Moravský
+  kras". Ověřeno vizuálně na `index.html` a `kontakt.html` (desktop
+  1440px i mobil 375px).
 
 ## Co ZBÝVÁ udělat
 1. **Vizuální ověření v prohlížeči** – rozjeté, ale nedokončené. Plán byl:

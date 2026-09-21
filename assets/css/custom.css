@@ -100,6 +100,32 @@ body,
     border-left: 1px solid var(--wsc-border);
 }
 
+/* Povinná publicita – logo Programu Švýcarsko-české spolupráce v hlavním menu */
+.ws-header-required-logo{
+    position: absolute;
+    top: 18px;
+    left: 15px;
+    z-index: 20;
+}
+.ws-header-required-logo img{
+    display: block;
+    height: 32px;
+    width: auto;
+}
+@media only screen and (max-width: 992px) {
+    .ws-header-required-logo{ top: 14px; }
+    .ws-header-required-logo img{ height: 26px; }
+}
+@media only screen and (max-width: 768px) {
+    .ws-header-required-logo{
+        position: static;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 8px;
+    }
+    .ws-header-required-logo img{ height: 24px; }
+}
+
 /*----------------------------------------
     1) OBECNÉ / TYPOGRAFIE
 -----------------------------------------*/
