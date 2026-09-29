@@ -488,6 +488,29 @@ body,
 .ws-timeline-box .ws-timeline-item h4{ font-size: 15px; }
 .ws-timeline-box .ws-timeline-item p{ font-size: 13px; line-height: 1.5; }
 
+/* Citace v článcích (tiskové zprávy, aktuality) */
+.ws-quote{
+    margin: 30px 0;
+    padding: 22px 28px;
+    border-left: 4px solid var(--wsc-accent);
+    background-color: var(--wsc-bg-soft);
+    border-radius: 0 10px 10px 0;
+}
+.ws-quote p{
+    font-size: 17px;
+    line-height: 1.7;
+    font-style: italic;
+    color: var(--wsc-dark);
+    margin: 0;
+}
+.ws-quote footer{
+    margin-top: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--wsc-green-dark);
+}
+.ws-quote footer:before{ content: ""; }
+
 /*----------------------------------------
     8) INDIKÁTORY / FAKTA (obdélníkové boxy)
 -----------------------------------------*/
