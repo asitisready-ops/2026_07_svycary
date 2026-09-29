@@ -511,6 +511,54 @@ body,
 }
 .ws-quote footer:before{ content: ""; }
 
+/* Filtr aktualit podle štítku (aktuality.html) */
+.ws-news-filter{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.ws-news-filter-btn{
+    padding: 8px 20px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--wsc-muted);
+    background-color: #fff;
+    border: 1px solid var(--wsc-border);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.ws-news-filter-btn:hover,
+.ws-news-filter-btn:focus-visible{
+    color: var(--wsc-green-dark);
+    border-color: var(--wsc-accent);
+    outline: none;
+}
+.ws-news-filter-btn.is-active{
+    color: #fff;
+    background-color: var(--wsc-accent-dark);
+    border-color: var(--wsc-accent-dark);
+}
+/* Flex místo floatů, aby se karty různé výšky po skrytí nezasekávaly */
+.ws-news-grid{
+    display: flex;
+    flex-wrap: wrap;
+    clear: both;
+}
+.ws-news-grid > .ws-journal-item[hidden]{ display: none; }
+.ws-news-empty{
+    text-align: center;
+    color: var(--wsc-muted);
+    padding: 20px 0 40px;
+}
+@media (max-width: 767px){
+    .ws-news-grid > .ws-journal-item{ width: 100%; }
+}
+
 /*----------------------------------------
     8) INDIKÁTORY / FAKTA (obdélníkové boxy)
 -----------------------------------------*/

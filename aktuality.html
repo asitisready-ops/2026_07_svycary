@@ -102,10 +102,19 @@
                 <p class="ws-lead">Sledujte, co se v projektu právě děje – od zahájení realizace až po pozvánky na akce pro veřejnost.</p>
             </div>
 
-            <div class="ws-journal-page padding-top-x40">
+            <div class="col-sm-12 padding-top-x40">
+                <div class="ws-news-filter" role="group" aria-label="Filtrovat aktuality podle štítku">
+                    <button type="button" class="ws-news-filter-btn is-active" data-filter="vse" aria-pressed="true">Vše</button>
+                    <button type="button" class="ws-news-filter-btn" data-filter="tiskove-zpravy" aria-pressed="false">Tiskové zprávy</button>
+                    <button type="button" class="ws-news-filter-btn" data-filter="verejne-akce" aria-pressed="false">Veřejné akce</button>
+                    <button type="button" class="ws-news-filter-btn" data-filter="clanky" aria-pressed="false">Články</button>
+                </div>
+            </div>
+
+            <div class="ws-journal-page ws-news-grid padding-top-x40">
 
                 <!-- Item 0 -->
-                <div class="col-sm-6 ws-journal-item">
+                <div class="col-sm-6 ws-journal-item" data-category="tiskove-zpravy">
                     <a href="aktualita-tiskova-zprava-zahajeni-projektu-zari-2026.html">
                         <div class="ws-journal-image">
                             <div class="ws-photo-placeholder ratio-16-9 has-image">
@@ -121,7 +130,7 @@
                 </div>
 
                 <!-- Item 1 -->
-                <div class="col-sm-6 ws-journal-item">
+                <div class="col-sm-6 ws-journal-item" data-category="verejne-akce">
                     <a href="aktualita-verejna-setkani-zajeci-potok-zari-2026.html">
                         <div class="ws-journal-image">
                             <div class="ws-photo-placeholder ratio-16-9 has-image">
@@ -137,7 +146,7 @@
                 </div>
 
                 <!-- Item 2 -->
-                <div class="col-sm-6 ws-journal-item">
+                <div class="col-sm-6 ws-journal-item" data-category="clanky">
                     <a href="aktualita-prohlidka-zajeci-potok-srpen-2026.html">
                         <div class="ws-journal-image">
                             <div class="ws-photo-placeholder ratio-16-9 has-image">
@@ -153,7 +162,7 @@
                 </div>
 
                 <!-- Item 3 -->
-                <div class="col-sm-6 ws-journal-item">
+                <div class="col-sm-6 ws-journal-item" data-category="verejne-akce">
                     <a href="aktualita-verejne-setkani-zajeci-potok.html">
                         <div class="ws-journal-image">
                             <div class="ws-photo-placeholder ratio-16-9 has-image">
@@ -167,6 +176,8 @@
                         <span class="ws-journal-category">Veřejná akce</span>
                     </a>
                 </div>
+
+                <p class="col-sm-12 ws-news-empty" hidden>V této kategorii zatím nejsou žádné aktuality.</p>
 
             </div>
         </div>

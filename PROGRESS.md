@@ -1,6 +1,6 @@
 # Progress – web projektu "Ochrana cenných ekosystémů a řízení udržitelné turistiky v okolí Brna"
 
-Poslední aktualizace: 2026-09-11
+Poslední aktualizace: 2026-09-29
 
 ## Kontext
 Upravujeme šablonu ThemeForest **Artday** (e-shop šablona) na prezentační web
@@ -24,7 +24,13 @@ Soubory v `HTML/`:
 - `oblast-zajeci-potok.html`, `oblast-sokolnice.html`, `oblast-arboretum-krtiny.html`, `oblast-doubravka.html`
 - `udrzitelny-turismus.html` – Plán udržitelného turismu, monitoring, spolupráce WSL
 - `partneri.html` – 5 partnerů konsorcia + 4 podporovatelé
-- `aktuality.html` – 4 ukázkové položky, jasně označené "Ukázkový obsah" (k nahrazení reálnými novinkami)
+- `aktuality.html` – přehled reálných aktualit (k 2026-09-29 čtyři položky, nejnovější nahoře), každá vede na samostatnou stránku `aktualita-*.html`:
+  - `aktualita-tiskova-zprava-zahajeni-projektu-zari-2026.html` – tisková zpráva k zahájení projektu (21. 9. 2026)
+  - `aktualita-verejna-setkani-zajeci-potok-zari-2026.html` – pozvánka na veřejná setkání 14. a 17. 9. 2026
+  - `aktualita-prohlidka-zajeci-potok-srpen-2026.html` – ohlédnutí za komentovanou prohlídkou 25. 8. 2026
+  - `aktualita-verejne-setkani-zajeci-potok.html` – pozvánka na komentovanou prohlídku
+  - Nová aktualita = zkopírovat hlavičku/patičku z existující `aktualita-*.html`, vyměnit obsah mezi `<!-- Page Parallax Header -->` a `<!-- End Page Content -->`, upravit `<title>` a meta description, přidat kartu na začátek `aktuality.html` **včetně atributu `data-category`**
+  - Filtr podle štítku (2026-09-29): tlačítka Vše / Tiskové zprávy / Veřejné akce / Články. Karta nese `data-category="tiskove-zpravy" | "verejne-akce" | "clanky"` (ohlédnutí za akcí spadá pod `clanky`). Logika v `assets/js/site.js`, styly `.ws-news-filter*` a `.ws-news-grid` v `custom.css` (flex mřížka s `clear: both`, jinak se vedle floatovaného sloupce smrskne). Filtr jde prolinkovat přes hash, např. `aktuality.html#tiskove-zpravy`
 - `ke-stazeni.html` – připravená struktura, dokumenty zatím "Připravuje se"
 - `kontakt.html` – kontaktní info (Atregia = žadatel, ASITIS = komunikace), formulář
 
@@ -67,6 +73,19 @@ se automaticky nasadí (obvykle do pár minut).
   logo webu a je vycentrované, aby se nepřekrývalo s textem "Moravský
   kras". Ověřeno vizuálně na `index.html` a `kontakt.html` (desktop
   1440px i mobil 375px).
+- (2026-09-21) Logo povinné publicity v hlavičce zvětšeno, vycentrováno na
+  výšku headeru a prolinkováno na `o-projektu.html`.
+- (2026-09-22) Upraven text partnera KAVYL, přejmenována lokalita Doubravka
+  napříč webem, zkrácena věta ve funding disclaimeru a do patičky přidány
+  sociální sítě Atregia (Facebook, LinkedIn).
+- (2026-09-29) Přidána **tisková zpráva k zahájení projektu** (zdroj:
+  `..\..\PR\2026_09 PR balíček launch\2026_09 PR balíček zahájení projektu\Tisková zpráva\TISKOVÁ ZPRÁVA.docx`,
+  citace autorizované, poznámky ŠLP zapracované) jako
+  `aktualita-tiskova-zprava-zahajeni-projektu-zari-2026.html` + karta v
+  `aktuality.html`. Do `assets/css/custom.css` přidán styl citací
+  `.ws-quote` (blockquote s linkou vlevo; přebíjí bootstrapí `footer:before`
+  s em dashem). Fotka `03-jeskyne.jpg` je ve skutečnosti Lom Seč, alt text
+  podle toho.
 
 ## Co ZBÝVÁ udělat
 1. **Vizuální ověření v prohlížeči** – rozjeté, ale nedokončené. Plán byl:
@@ -82,7 +101,7 @@ se automaticky nasadí (obvykle do pár minut).
      postup u úpravy hlavičky)
 2. Doplnit reálné fotografie lokalit a loga (projektu, programu, partnerů) místo placeholderů
 3. Zvážit smazání/úklid nepoužitých demo souborů šablony (viz výše)
-4. Případně doplnit skutečný obsah do `aktuality.html` a `ke-stazeni.html`, jakmile budou k dispozici
+4. Doplnit skutečný obsah do `ke-stazeni.html`, jakmile bude k dispozici (případně tam dát i tiskovou zprávu ke stažení); průběžně přidávat nové aktuality
 
 ## Jak pokračovat
 Stačí říct např. *"pokračuj v práci na webu Moravský kras / Švýcaři"* – tento

@@ -75,6 +75,38 @@
             });
         }
 
+        // Aktuality - filtr podle štítku (lze prolinkovat přes #tiskove-zpravy apod.)
+        var $newsFilter = $('.ws-news-filter');
+        if ($newsFilter.length) {
+            var $newsButtons = $newsFilter.find('.ws-news-filter-btn');
+            var $newsItems = $('.ws-news-grid .ws-journal-item');
+            var $newsEmpty = $('.ws-news-empty');
+
+            function applyNewsFilter(filter) {
+                if (!$newsButtons.filter('[data-filter="' + filter + '"]').length) { filter = 'vse'; }
+                $newsButtons.each(function() {
+                    var active = $(this).data('filter') === filter;
+                    $(this).toggleClass('is-active', active).attr('aria-pressed', active ? 'true' : 'false');
+                });
+                var visible = 0;
+                $newsItems.each(function() {
+                    var show = filter === 'vse' || $(this).data('category') === filter;
+                    this.hidden = !show;
+                    if (show) { visible++; }
+                });
+                $newsEmpty.prop('hidden', visible > 0);
+            }
+
+            $newsButtons.on('click', function() {
+                var filter = $(this).data('filter');
+                applyNewsFilter(filter);
+                if (window.history && history.replaceState) {
+                    history.replaceState(null, '', filter === 'vse' ? window.location.pathname : '#' + filter);
+                }
+            });
+            applyNewsFilter(window.location.hash.replace('#', '') || 'vse');
+        }
+
         // FAQ - ikona +/- podle stavu rozbalení
         $('.ws-faq-box .accordion-body').on('shown.bs.collapse', function() {
             $('.ws-faq-box .accordion-toggle[href="#' + this.id + '"]').addClass('active');
