@@ -1,6 +1,6 @@
 # Progress – web projektu "Ochrana cenných ekosystémů a řízení udržitelné turistiky v okolí Brna"
 
-Poslední aktualizace: 2026-09-29
+Poslední aktualizace: 2026-10-01
 
 ## Kontext
 Upravujeme šablonu ThemeForest **Artday** (e-shop šablona) na prezentační web
@@ -24,7 +24,8 @@ Soubory v `HTML/`:
 - `oblast-zajeci-potok.html`, `oblast-sokolnice.html`, `oblast-arboretum-krtiny.html`, `oblast-doubravka.html`
 - `udrzitelny-turismus.html` – Plán udržitelného turismu, monitoring, spolupráce WSL
 - `partneri.html` – 5 partnerů konsorcia + 4 podporovatelé
-- `aktuality.html` – přehled reálných aktualit (k 2026-09-29 čtyři položky, nejnovější nahoře), každá vede na samostatnou stránku `aktualita-*.html`:
+- `aktuality.html` – přehled reálných aktualit (k 2026-10-01 pět položek, nejnovější nahoře), každá vede na samostatnou stránku `aktualita-*.html`:
+  - `aktualita-den-se-strazi-prirody-rijen-2026.html` – pozvánka pro studenty MENDELU na terénní exkurzi s dobrovolnou stráží přírody v údolí Říčky 14. 10. 2026 (karta `data-category="verejne-akce"`, štítek "Akce pro studenty"; bod přidán i do harmonogramu v `o-projektu.html`)
   - `aktualita-tiskova-zprava-zahajeni-projektu-zari-2026.html` – tisková zpráva k zahájení projektu (21. 9. 2026)
   - `aktualita-verejna-setkani-zajeci-potok-zari-2026.html` – pozvánka na veřejná setkání 14. a 17. 9. 2026
   - `aktualita-prohlidka-zajeci-potok-srpen-2026.html` – ohlédnutí za komentovanou prohlídkou 25. 8. 2026
@@ -75,6 +76,11 @@ se automaticky nasadí (obvykle do pár minut).
   1440px i mobil 375px).
 - (2026-09-21) Logo povinné publicity v hlavičce zvětšeno, vycentrováno na
   výšku headeru a prolinkováno na `o-projektu.html`.
+- (2026-09-29) Opraveno překrývání loga povinné publicity s položkou menu
+  "O projektu" (děje se na šířkách pod cca 1500px). Menu dostává symetrickou
+  rezervu podle šířky loga, mezery mezi položkami se na 1200–1560px zužují
+  (`clamp`), logo má 40px na 993–1599px a 48px od 1600px. Do 992px je logo
+  nad hlavičkou vycentrované (dřív až od 768px). Ověřeno na 800–1920px.
 - (2026-09-22) Upraven text partnera KAVYL, přejmenována lokalita Doubravka
   napříč webem, zkrácena věta ve funding disclaimeru a do patičky přidány
   sociální sítě Atregia (Facebook, LinkedIn).

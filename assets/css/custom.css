@@ -113,16 +113,48 @@ body,
     height: 48px;
     width: auto;
 }
-@media only screen and (max-width: 992px) {
-    .ws-header-required-logo img{ height: 38px; }
+/* Logo je absolutně vlevo u okraje stránky; menu proto dostane z obou stran
+   rezervu (15px od kraje + šířka loga + 16px mezera − okraj kontejneru),
+   symetricky, aby zůstalo vycentrované. Poměr stran loga je cca 3,4 : 1,
+   tj. 40px výška = 136px šířka (rezerva 167px), 48px = 163px (rezerva 194px). */
+@media only screen and (min-width: 993px) and (max-width: 1599px) {
+    .ws-header-required-logo img{ height: 40px; }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 993px) and (max-width: 1199px) {
+    .ws-header-static .ws-navbar .navbar-collapse{
+        padding-left: max(15px, calc(167px - (100vw - 970px) / 2));
+        padding-right: max(15px, calc(167px - (100vw - 970px) / 2));
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .ws-header-static .ws-navbar .navbar-collapse{
+        padding-left: max(15px, calc(167px - (100vw - 1170px) / 2));
+        padding-right: max(15px, calc(167px - (100vw - 1170px) / 2));
+    }
+    /* mezery mezi položkami menu se zužují s šířkou okna, aby se vešly na jeden řádek */
+    .ws-header-static .ws-navbar .navbar-nav > li{
+        padding-left: clamp(8px, calc((100vw - 1080px) / 16), 30px);
+        padding-right: clamp(8px, calc((100vw - 1080px) / 16), 30px);
+    }
+}
+@media only screen and (min-width: 1600px) {
+    .ws-header-static .ws-navbar .navbar-collapse{
+        padding-left: max(15px, calc(194px - (100vw - 1170px) / 2));
+        padding-right: max(15px, calc(194px - (100vw - 1170px) / 2));
+    }
+}
+/* Do 992px se menu vedle loga nevejde – logo jde nad hlavičku, vycentrované */
+@media only screen and (max-width: 992px) {
     .ws-header-required-logo{
         position: static;
+        transform: none;
         display: flex;
         justify-content: center;
         margin-bottom: 8px;
     }
+    .ws-header-required-logo img{ height: 38px; }
+}
+@media only screen and (max-width: 768px) {
     .ws-header-required-logo img{ height: 32px; }
 }
 
