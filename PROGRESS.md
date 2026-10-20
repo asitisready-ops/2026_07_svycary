@@ -1,6 +1,6 @@
 # Progress – web projektu "Ochrana cenných ekosystémů a řízení udržitelné turistiky v okolí Brna"
 
-Poslední aktualizace: 2026-10-01
+Poslední aktualizace: 2026-10-20
 
 ## Kontext
 Upravujeme šablonu ThemeForest **Artday** (e-shop šablona) na prezentační web
@@ -24,7 +24,8 @@ Soubory v `HTML/`:
 - `oblast-zajeci-potok.html`, `oblast-sokolnice.html`, `oblast-arboretum-krtiny.html`, `oblast-doubravka.html`
 - `udrzitelny-turismus.html` – Plán udržitelného turismu, monitoring, spolupráce WSL
 - `partneri.html` – 5 partnerů konsorcia + 4 podporovatelé
-- `aktuality.html` – přehled reálných aktualit (k 2026-10-01 pět položek, nejnovější nahoře), každá vede na samostatnou stránku `aktualita-*.html`:
+- `aktuality.html` – přehled reálných aktualit (k 2026-10-20 šest položek, nejnovější nahoře), každá vede na samostatnou stránku `aktualita-*.html`:
+  - `aktualita-den-se-strazi-prirody-ohlednuti-rijen-2026.html` – ohlédnutí za exkurzí 14. 10. 2026 (33 studentů oboru Integrovaná ochrana přírody, 2 strážci), karta `data-category="clanky"`, štítek "Ohlédnutí za akcí"; fotogalerie (owl carousel + lightbox) z `assets/img/gallery/den-se-strazi-prirody-2026-10/`
   - `aktualita-den-se-strazi-prirody-rijen-2026.html` – pozvánka pro studenty MENDELU na terénní exkurzi s dobrovolnou stráží přírody v údolí Říčky 14. 10. 2026 (karta `data-category="verejne-akce"`, štítek "Akce pro studenty"; bod přidán i do harmonogramu v `o-projektu.html`)
   - `aktualita-tiskova-zprava-zahajeni-projektu-zari-2026.html` – tisková zpráva k zahájení projektu (21. 9. 2026)
   - `aktualita-verejna-setkani-zajeci-potok-zari-2026.html` – pozvánka na veřejná setkání 14. a 17. 9. 2026
@@ -92,6 +93,11 @@ se automaticky nasadí (obvykle do pár minut).
   `.ws-quote` (blockquote s linkou vlevo; přebíjí bootstrapí `footer:before`
   s em dashem). Fotka `03-jeskyne.jpg` je ve skutečnosti Lom Seč, alt text
   podle toho.
+- 2026-10-20: ohlédnutí za Dnem v kůži dobrovolného strážce přírody
+  (`aktualita-den-se-strazi-prirody-ohlednuti-rijen-2026.html` + karta v
+  `aktuality.html`). Fotky z WhatsAppu zmenšeny na 1400 px, jemně odšuměny
+  a komprimovány na cca 300 KB/ks. Použity jen skupinové a pracovní záběry,
+  fotka z učebny s rozpoznatelnými obličeji vynechána (GDPR).
 
 ## Co ZBÝVÁ udělat
 1. **Vizuální ověření v prohlížeči** – rozjeté, ale nedokončené. Plán byl:
