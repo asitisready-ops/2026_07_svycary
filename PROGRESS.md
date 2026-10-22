@@ -1,6 +1,6 @@
 # Progress – web projektu "Ochrana cenných ekosystémů a řízení udržitelné turistiky v okolí Brna"
 
-Poslední aktualizace: 2026-10-20
+Poslední aktualizace: 2026-10-22
 
 ## Kontext
 Upravujeme šablonu ThemeForest **Artday** (e-shop šablona) na prezentační web
@@ -24,7 +24,8 @@ Soubory v `HTML/`:
 - `oblast-zajeci-potok.html`, `oblast-sokolnice.html`, `oblast-arboretum-krtiny.html`, `oblast-doubravka.html`
 - `udrzitelny-turismus.html` – Plán udržitelného turismu, monitoring, spolupráce WSL
 - `partneri.html` – 5 partnerů konsorcia + 4 podporovatelé
-- `aktuality.html` – přehled reálných aktualit (k 2026-10-20 šest položek, nejnovější nahoře), každá vede na samostatnou stránku `aktualita-*.html`:
+- `aktuality.html` – přehled reálných aktualit (k 2026-10-22 sedm položek, nejnovější nahoře), každá vede na samostatnou stránku `aktualita-*.html`:
+  - `aktualita-konference-70-let-chko-moravsky-kras-rijen-2026.html` – ohlédnutí za konferencí k 70. výročí CHKO Moravský kras (15.–16. 10. 2026), s fotogalerií
   - `aktualita-den-se-strazi-prirody-ohlednuti-rijen-2026.html` – ohlédnutí za exkurzí 14. 10. 2026 (33 studentů oboru Integrovaná ochrana přírody, 2 strážci), karta `data-category="clanky"`, štítek "Ohlédnutí za akcí"; fotogalerie (owl carousel + lightbox) z `assets/img/gallery/den-se-strazi-prirody-2026-10/`
   - `aktualita-den-se-strazi-prirody-rijen-2026.html` – pozvánka pro studenty MENDELU na terénní exkurzi s dobrovolnou stráží přírody v údolí Říčky 14. 10. 2026 (karta `data-category="verejne-akce"`, štítek "Akce pro studenty"; bod přidán i do harmonogramu v `o-projektu.html`)
   - `aktualita-tiskova-zprava-zahajeni-projektu-zari-2026.html` – tisková zpráva k zahájení projektu (21. 9. 2026)
@@ -33,6 +34,7 @@ Soubory v `HTML/`:
   - `aktualita-verejne-setkani-zajeci-potok.html` – pozvánka na komentovanou prohlídku
   - Nová aktualita = zkopírovat hlavičku/patičku z existující `aktualita-*.html`, vyměnit obsah mezi `<!-- Page Parallax Header -->` a `<!-- End Page Content -->`, upravit `<title>` a meta description, přidat kartu na začátek `aktuality.html` **včetně atributu `data-category`**
   - Filtr podle štítku (2026-09-29): tlačítka Vše / Tiskové zprávy / Veřejné akce / Články. Karta nese `data-category="tiskove-zpravy" | "verejne-akce" | "clanky"` (ohlédnutí za akcí spadá pod `clanky`). Logika v `assets/js/site.js`, styly `.ws-news-filter*` a `.ws-news-grid` v `custom.css` (flex mřížka s `clear: both`, jinak se vedle floatovaného sloupce smrskne). Filtr jde prolinkovat přes hash, např. `aktuality.html#tiskove-zpravy`
+- `assets/downloads/dokumentace-projektu.zip` – projektová dokumentace Zaječí potok (od 2026-10-22 verze 10/2026, 51 PDF bez podsložky), odkazují na ni `ke-stazeni.html` i `oblast-zajeci-potok.html`; při další aktualizaci stačí soubor přepsat
 - `ke-stazeni.html` – připravená struktura, dokumenty zatím "Připravuje se"
 - `kontakt.html` – kontaktní info (Atregia = žadatel, ASITIS = komunikace), formulář
 
