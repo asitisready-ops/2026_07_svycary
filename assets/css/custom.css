@@ -1031,3 +1031,17 @@ body,
     .ws-stats-section .ws-stat-item{ border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; margin-bottom: 10px; }
     .ws-lightbox{ padding: 60px 20px; }
 }
+
+/* Odkaz na svycarskyprogram.cz ve financni liste */
+.ws-funding-bar .ws-funding-text a{
+    color: inherit;
+    text-decoration: underline;
+}
+.ws-funding-bar .ws-funding-text a:hover,
+.ws-funding-bar .ws-funding-text a:focus{
+    color: var(--wsc-green);
+}
+.ws-funding-bar .ws-funding-logo.has-logo a{
+    display: block;
+    line-height: 0;
+}
